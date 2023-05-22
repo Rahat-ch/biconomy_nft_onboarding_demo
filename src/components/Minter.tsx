@@ -103,7 +103,7 @@ const Minter:React.FC<Props> = ({ smartAccount, provider, loading}) => {
         />
             <button className={styles.demoButton} onClick={() => mintNFT()}>Mint NFT</button>
             {nftCount ? (<p>You own {nftCount} tickets </p>): null}
-            {nftCount ? (<p>View your NFTs <a className={styles.viewNFT} href={nftURL} target="_blank">here</a> </p>): null}
+            <p>View your NFTs <a className={styles.viewNFT} href={nftURL} target="_blank">here</a> after minting </p>
         </div>
     )
 };
