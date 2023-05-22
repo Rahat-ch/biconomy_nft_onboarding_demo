@@ -30,16 +30,12 @@ export default function App() {
   async function login() {
     if (!sdkRef.current) {
       const socialLoginSDK = new SocialLogin()
-      const signature1 = await socialLoginSDK.whitelistUrl('https://biconomysdk-nft-demo.vercel.app/')
-      const signtature2 = await socialLoginSDK.whitelistUrl('http://localhost:4173/')
-      const signature3 = await socialLoginSDK.whitelistUrl('https://aanft.vercel.app/')
+      const signature1 = await socialLoginSDK.whitelistUrl('https://aanft.vercel.app/')
       await socialLoginSDK.init({
         chainId: ethers.utils.hexValue(ChainId.POLYGON_MUMBAI).toString(),
         network: "testnet",
         whitelistUrls: {
-          'http://localhost:5173/': signature1,
-          'http://localhost:4173/': signtature2,
-          'https://aanft.vercel.app/': signature3,
+          'https://aanft.vercel.app/': signature1,
         }
       })
       sdkRef.current = socialLoginSDK
